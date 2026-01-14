@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Souza | Tecnologia & Inovação</title>
+  <meta name="description" content="Site institucional para portfólio com foco em divulgação e informação sobre tecnologia." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeDown 1s ease forwards;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #020617;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #020617;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lucas Souza</h1>
+    <p>Estudante apaixonado por tecnologia, inovação e aprendizado contínuo. Este site tem como objetivo compartilhar conhecimentos sobre o universo tech e apresentar minha evolução acadêmica e prática como estudante.</p>
+  </header>
+
+  <section>
+    <h2>Perfil Acadêmico</h2>
+    <p>
+      Sou estudante da área de tecnologia, focado em desenvolver uma base sólida em conceitos fundamentais, boas práticas e ferramentas modernas. Este projeto faz parte do meu portfólio acadêmico e demonstra minha capacidade de aprender, organizar informações e aplicar conhecimentos técnicos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Áreas de Estudo em Tecnologia</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Desenvolvimento Web</h3>
+        <p>Criação de interfaces modernas, responsivas e acessíveis utilizando HTML, CSS, JavaScript e frameworks atuais.</p>
+      </div>
+      <div class="card">
+        <h3>Inteligência Artificial</h3>
+        <p>Uso de algoritmos inteligentes para automação, análise de dados, geração de conteúdo e soluções inovadoras.</p>
+      </div>
+      <div class="card">
+        <h3>Segurança da Informação</h3>
+        <p>Práticas e conceitos para proteger dados, sistemas e usuários em ambientes digitais cada vez mais conectados.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Computing</h3>
+        <p>Infraestruturas escaláveis e serviços em nuvem que facilitam deploy, armazenamento e performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tecnologias em Aprendizado</h2>
+    <div class="cards">
+      <div class="card"><h3>HTML5</h3><p>Estrutura semântica e acessível.</p></div>
+      <div class="card"><h3>CSS3</h3><p>Design moderno, responsivo e visualmente limpo.</p></div>
+      <div class="card"><h3>JavaScript</h3><p>Interatividade e evolução futura do projeto.</p></div>
+      <div class="card"><h3>UI/UX</h3><p>Experiência do usuário como prioridade.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objetivo Profissional</h2>
+    <p>
+      Busco oportunidades de aprendizado, estágio ou projetos acadêmicos que me permitam evoluir profissionalmente, adquirir experiência prática e contribuir com soluções tecnológicas.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 - Lucas Souza | Portfólio de Tecnologia</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
